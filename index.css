@@ -18,6 +18,19 @@
     position: relative;
 }
 
+.collar {
+    --size: 143px;
+    width: var(--size); 
+    height: var(--size);  
+    border: solid 10px;
+    border-color: #9d160c transparent transparent transparent;
+    border-radius: var(--size);
+    position: relative;
+    transform: rotate(-160deg);
+    top: -116px;
+    left: 167px;
+}
+
 .body{
     background-color: rgb(235, 161, 60);
     width: 290px;
@@ -35,7 +48,6 @@
     position: absolute;
     right: -50px;
     top: -120px;
-    border: solid 2px;
     z-index: 10;
 }
 

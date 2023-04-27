@@ -81,7 +81,7 @@
   
 @keyframes tail-wag {
     50% { 
-        transform: rotate(-37deg); 
+        transform: rotate(-30deg); 
     }
     100% {
         transform: rotate(-40deg);        
@@ -162,9 +162,10 @@
     background-color: rgba(0, 0, 0, 0.75);
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 00px;
     top: 55px;
     left: 38px;
+    animation: closeEye infinite linear 2s;
 }
 
 .eye::after{
@@ -173,9 +174,25 @@
     background-color: rgba(0, 0, 0, 0.75);
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 200px;
     top: 55px;
     right: 37px;
+    animation: closeEye infinite linear 2s;
+}
+
+@keyframes closeEye {
+    0%, 40% { 
+        transform: scaleY(1);
+        border-radius: 200px;         
+    }
+    41%, 47%{
+        transform: scaleY(0.2);
+        border-radius: 0px; 
+    }
+    48%, 100% {
+        transform: scaleY(1);
+        border-radius: 200px; 
+    }
 }
 
 .white-circle{

@@ -1,5 +1,6 @@
 :root{
     --time: 0.85s;
+    --height: 92px;
 }
 
 .container{
@@ -16,6 +17,19 @@
 
 .cat{
     position: relative;
+    animation: bounce 0.4s infinite;
+}
+
+@keyframes bounce {
+    0%, 100%{
+        top: 0px;
+    }
+    25%, 75%{
+        top: 5px;
+    }
+    50%{
+        top: 10px;
+    }
 }
 
 .collar {
@@ -31,6 +45,18 @@
     left: 167px;
 }
 
+.collar::after {
+    --size: 30px;
+    width: var(--size); 
+    height: var(--size);
+    content:'';
+    position: absolute;
+    top: -37px;
+    right: 90px;
+    background-color: rgb(255, 223, 68);
+    border-radius: 200px;
+}
+
 .body{
     background-color: rgb(235, 161, 60);
     width: 290px;
@@ -38,6 +64,28 @@
     border-radius: 200px ;
     position: relative;
     z-index: 5;
+}
+
+.tail {
+    position: absolute;
+    top: -100px;
+    left: 30px;
+    width: 35px;
+    height: 200px;
+    background-color: rgb(235, 161, 60);
+    border-radius: 200px ;
+    transform: rotate(-40deg);
+    transform-origin: bottom center;
+    animation: tail-wag 1s infinite alternate;
+}
+  
+@keyframes tail-wag {
+    50% { 
+        transform: rotate(-37deg); 
+    }
+    100% {
+        transform: rotate(-40deg);        
+    }
 }
 
 .head{
@@ -236,6 +284,17 @@
     animation: FrontRightLeg infinite var(--time);
 }
 
+@keyframes  FrontRightLeg {
+    75%{
+        top: var(--height);
+    }
+    50%{
+        top: 105px;
+        left: 183px;
+        transform: rotate(30deg);
+    }
+}
+
 .right-leg::after{
     content: '';
     background-color: rgb(235, 161, 60);
@@ -248,6 +307,17 @@
     transform: rotate(-30deg);
     z-index: 2;
     animation: BackRightLeg none infinite var(--time);
+}
+
+@keyframes BackRightLeg {
+    75%{
+        top: var(--height);
+    }
+    50%{
+        top: 105px;
+        left: 20px;
+        transform: rotate(30deg);
+    }
 }
 
 .left-leg::before{
@@ -264,6 +334,17 @@
     animation: FrontLeftLeg infinite var(--time);
 }
 
+@keyframes FrontLeftLeg {
+    25%{
+        top: var(--height);
+    }
+    50%{
+        top: 105px;
+        left: 225px;
+        transform: rotate(-30deg);
+    }
+}
+
 .left-leg::after{
     content: '';
     background-color: rgb(213, 133, 50);
@@ -278,52 +359,29 @@
     animation: BackLeftLeg infinite var(--time);
 }
 
-@keyframes  FrontRightLeg {
-    /* 0%, 100%{
-        top: 105px;
-        left: 225px;
-        transform: rotate(-30deg);
-    }
-    25%,75%{
-        top: 100px;
-        left: 204px;
-    } */
-    50%{
-        top: 105px;
-        left: 183px;
-        transform: rotate(30deg);
-    }
-}
-
-@keyframes BackRightLeg {
-    50%{
-        top: 105px;
-        left: 20px;
-        transform: rotate(30deg);
-    }
-}
-
-@keyframes FrontLeftLeg {
-    /* 0%,100%{
-        top: 105px;
-        left: 183px;
-        transform: rotate(30deg);
-    }
-    25%,75%{
-        top: 100px;
-        left: 204px;
-    } */
-    50%{
-        top: 105px;
-        left: 225px;
-        transform: rotate(-30deg);
-    }
-}
-
 @keyframes BackLeftLeg {
+    25%{
+        top: var(--height);
+    }
     50%{
         top: 105px;
         left: 60px;
         transform: rotate(-30deg);
+    }
+}
+
+.ground{
+    background-color: rgb(226, 226, 242);
+    width: 400px;
+    height: 30px;
+    border-radius: 200px;
+    position: absolute;
+    bottom: 195px;
+    animation: groundBounce infinite var(--time);
+}
+
+@keyframes groundBounce {
+    50%{
+        width: 450px;
     }
 }

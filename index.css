@@ -58,7 +58,7 @@
 }
 
 .body{
-    background-color: rgb(235, 161, 60);
+    background-color: rgb(114, 110, 99);
     width: 290px;
     height: 150px;
     border-radius: 200px ;
@@ -72,7 +72,7 @@
     left: 30px;
     width: 35px;
     height: 200px;
-    background-color: rgb(235, 161, 60);
+    background-color: rgb(114, 110, 99);
     border-radius: 200px ;
     transform: rotate(-40deg);
     transform-origin: bottom center;
@@ -89,7 +89,7 @@
 }
 
 .head{
-    background-color: rgb(235, 161, 60);
+    background-color: rgb(114, 110, 99);
     width: 170px;
     height: 155px;
     border-radius: 50%;
@@ -99,10 +99,9 @@
     z-index: 10;
 }
 
-.ear-outside::before{
-    content: '';
+.left-ear-outside{
     position: absolute;    
-    background-color: rgb(235, 161, 60);
+    background-color: rgb(114, 110, 99);
     width: 60px;
     height: 80px;
     top: -130px;
@@ -110,12 +109,40 @@
     transform: rotate(-20deg);
     z-index: 1;    
     border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+    animation: LeftEarMove infinite linear 2.2s;
 }
 
-.ear-outside::after{
+@keyframes LeftEarMove {
+    0% ,30%{ 
+        top: -130px;
+        right: 60px;         
+    }
+    41%, 60%{
+        top: -117px; 
+        right: 67px;
+    }
+    70%, 100% {
+        top: -130px;
+        right: 60px;
+    }
+
+}
+
+.left-ear-inside{
+    position: relative;
+    background-color: rgb(177, 174, 169);
+    width: 50px;
+    height: 70px;
+    top: 10px;
+    left: 5px;
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+    z-index: 1;
+}
+
+.right-ear-outside{
     content: '';
     position: absolute;
-    background-color: rgb(235, 161, 60);
+    background-color: rgb(114, 110, 99);
     width: 60px;
     height: 80px;
     top: -130px;
@@ -123,37 +150,55 @@
     transform: rotate(20deg);
     z-index: 1;    
     border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
+    animation: RightEarMove infinite linear 2.2s;
 }
 
-.ear-inside::before{
-    content: '';
-    position: absolute;
-    background-color: rgb(212, 133, 51);
-    width: 50px;
-    height: 70px;
-    top: -120px;
-    right: 65px;
-    transform: rotate(-20deg);
-    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
-    z-index: 2; 
+@keyframes RightEarMove {
+    0% ,30%{ 
+        top: -130px;
+        right: -45px;         
+    }
+    41%, 60%{
+    top: -117px;
+    right: -54px;
+    }
+    70%, 100% {
+        top: -130px;
+        right: -45px;
+    }
 }
 
-.ear-inside::after{
-    content: '';
+.right-ear-inside{
     position: absolute;
-    background-color: rgb(212, 133, 51);
+    background-color: rgb(177, 174, 169);
     width: 50px;
     height: 70px;
-    top: -120px;
-    right: -38px;
-    transform: rotate(20deg);
+    top: 10px;
+    left: 5px;
     border-radius: 50% 50% 50% 50% / 100% 100% 0% 0% ;
     z-index: 2;
 }
 
 .face{
     position: relative;
-    top: -5px;
+    top: -3px;
+    left: 10px;
+    animation: moveFace infinite linear 2.2s;
+}
+
+@keyframes moveFace {
+    0% ,30%{ 
+        top: -3px;
+        left: 10px;         
+    }
+    41%, 60%{
+        top: -5px;
+        left: 0px; 
+    }
+    70%, 100% {
+        top: -3px;
+        left: 10px;
+    }
 }
 
 .eye::before{
@@ -162,10 +207,10 @@
     background-color: rgba(0, 0, 0, 0.75);
     width: 30px;
     height: 30px;
-    border-radius: 00px;
+    border-radius: 200px;
     top: 55px;
     left: 38px;
-    animation: closeEye infinite linear 2s;
+    animation: closeEye infinite linear 2.2s;
 }
 
 .eye::after{
@@ -177,19 +222,19 @@
     border-radius: 200px;
     top: 55px;
     right: 37px;
-    animation: closeEye infinite linear 2s;
+    animation: closeEye infinite linear 2.2s;
 }
 
 @keyframes closeEye {
-    0%, 40% { 
+    0%, 43% { 
         transform: scaleY(1);
         border-radius: 200px;         
     }
-    41%, 47%{
+    44%, 48%{
         transform: scaleY(0.2);
         border-radius: 0px; 
     }
-    48%, 100% {
+    49%, 100% {
         transform: scaleY(1);
         border-radius: 200px; 
     }
@@ -289,7 +334,7 @@
 
 .right-leg::before{
     content: '';
-    background-color: rgb(235, 161, 60);
+    background-color: rgb(114, 110, 99);
     position: absolute;
     border-radius: 200px ;
     width: 33px;
@@ -314,7 +359,7 @@
 
 .right-leg::after{
     content: '';
-    background-color: rgb(235, 161, 60);
+    background-color: rgb(114, 110, 99);
     position: absolute;
     border-radius: 200px;
     width: 33px;
@@ -339,7 +384,7 @@
 
 .left-leg::before{
     content: '';
-    background-color: rgb(213, 133, 50);
+    background-color: rgb(90, 86, 77);
     position: absolute;
     border-radius: 200px ;
     width: 33px;
@@ -364,7 +409,7 @@
 
 .left-leg::after{
     content: '';
-    background-color: rgb(213, 133, 50);
+    background-color: rgb(90, 86, 77);
     position: absolute;
     border-radius: 200px ;
     width: 33px;
@@ -393,7 +438,7 @@
     height: 30px;
     border-radius: 200px;
     position: absolute;
-    bottom: 195px;
+    bottom: 26%;
     animation: groundBounce infinite var(--time);
 }
 

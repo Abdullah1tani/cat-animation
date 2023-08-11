@@ -12,3 +12,4 @@ Thank you for reading :D
 Please check out my other personal projects:
 - [Card Animation](https://github.com/Abdullah1tani/card-animation)
 - [Weather Tracker](https://github.com/Abdullah1tani/WeatherProject)
+- [School Donations](https://github.com/Abdullah1tani/School-donations)

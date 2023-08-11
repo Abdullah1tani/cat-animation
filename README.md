@@ -1,4 +1,4 @@
-# cat-animation
+# Cat Animation
 
 This animated cat is inspired by [the purrfect guide for creating an animated cat](https://www.svgator.com/blog/how-to-create-an-animated-cat/) by [svgator](https://youtube.com/@SVGator). The animated cat was originally created using SVG, but this animation is created using HTML and CSS only. 
 
